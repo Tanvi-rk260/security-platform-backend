@@ -21,5 +21,3 @@ const checkmarxResultSchema = new moongoose.Schema({
   ,issuesFound: { type: Number, default: 0 }
   ,details: { type: String, default: '' }
 },{timestamps: true});
-
-const CheckmarxResult = moongoose.model('CheckmarxResult', checkmarxResultSchema);
