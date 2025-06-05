@@ -1,4 +1,4 @@
-const express = require('express');
+/*const express = require('express');
 const router = express.Router();
 
 const wafScan = require('../utils/wafScanner');
@@ -26,4 +26,4 @@ router.post('/page-speed', async (req, res) => {
   res.json(result);
 });
 
-module.exports = router;
+module.exports = router;*/

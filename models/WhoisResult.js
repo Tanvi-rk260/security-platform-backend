@@ -1,12 +1,13 @@
-const mongoose = require('mongoose');
+// models/WhoisResult.js
 
-const WhoisResultSchema = new mongoose.Schema({
+import mongoose from 'mongoose';
+
+const WhoisResultSchema = new mongoose.Schema(
+  {
     domain: String,
     result: Object,
-    scannedAt: {
-        type: Date,
-        default: Date.now
-    }
-});
+  },
+  { timestamps: true }
+);
 
-module.exports = mongoose.model('WhoisResult', WhoisResultSchema);
+export default mongoose.model('WhoisResult', WhoisResultSchema);

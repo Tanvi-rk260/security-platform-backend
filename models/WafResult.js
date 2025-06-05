@@ -1,5 +1,4 @@
-// models/wafResults.js
-
+// models/WafResult.js
 import mongoose from 'mongoose';
 
 const wafResultSchema = new mongoose.Schema({
@@ -13,5 +12,4 @@ const wafResultSchema = new mongoose.Schema({
 });
 
 const WafResult = mongoose.model('WafResult', wafResultSchema);
-
 export default WafResult;

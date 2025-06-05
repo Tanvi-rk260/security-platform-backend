@@ -1,4 +1,4 @@
-const axios = require("axios");
+/*const axios = require("axios");
 const WafResult = require('../models/WafResult');
 // path adjust as per your structure
 
@@ -25,4 +25,4 @@ const runWafScanner = async (req, res) => {
   }
 };
 
-module.exports = { runWafScanner };
+module.exports = { runWafScanner };*/

@@ -1,4 +1,4 @@
-const express = require('express');
+/*const express = require('express');
 const router = express.Router();
 const whoiser = require('whoiser');
 const WhoisResult = require('../models/WhoisResult');
@@ -25,4 +25,4 @@ router.post('/whois-scan', async (req, res) => {
     }
 });
 
-module.exports = router;  
+module.exports = router;  */

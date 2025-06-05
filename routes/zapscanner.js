@@ -1,5 +1,5 @@
 // routes/zapscanner.js
-
+/*
 const express = require('express');
 const router = express.Router();
 const ZapResult = require('../models/ZapResult');
@@ -32,4 +32,4 @@ router.post('/', async (req, res) => {
   }
 });
 
-module.exports = router;
+module.exports = router;*/

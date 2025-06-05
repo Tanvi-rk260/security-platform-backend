@@ -1,4 +1,4 @@
-const express = require("express");
+/*const express = require("express");
 const router = express.Router();
 
 // Dummy register route
@@ -13,4 +13,4 @@ router.post("/login", (req, res) => {
   res.json({ message: "Login route hit (dummy)" });
 });
 
-module.exports = router;
+module.exports = router;*/

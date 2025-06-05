@@ -1,19 +1,30 @@
 // controllers/wafController.js
+import axios from 'axios';
+import WafResult from '../models/WafResult.js';
 
-import WafResult from '../models/wafResults.js';
+export const runWafScanner = async (req, res) => {
+  const { url } = req.body;
 
-// Save new WAF result
-export const saveWafResult = async (data) => {
-  const newResult = new WafResult(data);
-  return await newResult.save();
-};
+  try {
+    const response = await axios.get(`https://api.wafw00f.org/scan?url=${url}`);
+    const result = response.data;
 
-// Get all WAF results
-export const getAllWafResults = async () => {
-  return await WafResult.find();
-};
+    await WafResult.create({
+      url,
+      wafDetected: result.detected || false,
+      wafName: result.waf || 'Unknown'
+    });
 
-// Get WAF result by ID
-export const getWafResultById = async (id) => {
-  return await WafResult.findById(id);
+    res.status(200).json({
+      success: true,
+      message: 'WAF Scan Completed',
+      data: result
+    });
+  } catch (error) {
+    res.status(500).json({
+      success: false,
+      message: 'WAF Scan Failed',
+      error: error.message
+    });
+  }
 };
