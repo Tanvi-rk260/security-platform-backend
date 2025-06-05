@@ -1,4 +1,6 @@
-const mongoose = require('mongoose');
+// models/wafResults.js
+
+import mongoose from 'mongoose';
 
 const wafResultSchema = new mongoose.Schema({
   url: String,
@@ -10,4 +12,6 @@ const wafResultSchema = new mongoose.Schema({
   }
 });
 
-module.exports = mongoose.model('WafResult', wafResultSchema);
+const WafResult = mongoose.model('WafResult', wafResultSchema);
+
+export default WafResult;

@@ -1,4 +1,6 @@
-const mongoose = require('mongoose');
+// models/vulnResults.js
+
+import mongoose from 'mongoose';
 
 const vulnResultSchema = new mongoose.Schema({
   url: String,
@@ -9,4 +11,6 @@ const vulnResultSchema = new mongoose.Schema({
   }
 });
 
-module.exports = mongoose.model('VulnResult', vulnResultSchema);
+const VulnResult = mongoose.model('VulnResult', vulnResultSchema);
+
+export default VulnResult;

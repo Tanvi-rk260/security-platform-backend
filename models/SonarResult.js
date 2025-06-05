@@ -1,6 +1,6 @@
 // models/SonarResult.js
 
-const mongoose = require("mongoose"); // ✅ Important
+import mongoose from 'mongoose';
 
 const sonarResultSchema = new mongoose.Schema({
   url: String,
@@ -9,5 +9,6 @@ const sonarResultSchema = new mongoose.Schema({
   timestamp: { type: Date, default: Date.now }
 });
 
-const SonarResult = mongoose.model("SonarResult", sonarResultSchema);
-module.exports = SonarResult;
+const SonarResult = mongoose.model('SonarResult', sonarResultSchema);
+
+export default SonarResult;

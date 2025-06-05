@@ -1,6 +1,6 @@
 // models/ReconResult.js
 
-const mongoose = require('mongoose');
+import mongoose from 'mongoose';
 
 const reconResultSchema = new mongoose.Schema({
   url: String,
@@ -10,4 +10,4 @@ const reconResultSchema = new mongoose.Schema({
 });
 
 const ReconResult = mongoose.model('ReconResult', reconResultSchema);
-module.exports = ReconResult;
+export default ReconResult;
