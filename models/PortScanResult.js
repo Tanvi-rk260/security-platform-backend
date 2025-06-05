@@ -1,9 +1,13 @@
-const mongoose = require("mongoose");
+// models/PortScanResult.js
 
-const PortScanResultSchema = new mongoose.Schema({
+import mongoose from "mongoose";
+
+const portScanResultSchema = new mongoose.Schema({
   host: { type: String, required: true },
-  openPorts: [Number],
+  openPorts: { type: [Number], default: [] },
   scannedAt: { type: Date, default: Date.now },
 });
 
-module.exports = mongoose.model("PortScanResult", PortScanResultSchema);
+const PortScanResult = mongoose.model("PortScanResult", portScanResultSchema);
+
+export default PortScanResult;

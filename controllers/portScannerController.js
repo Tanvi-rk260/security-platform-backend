@@ -1,7 +1,9 @@
-const portscanner = require("portscanner");
-const PortScanResult = require("../models/PortScanResult");
+// controllers/portScannerController.js
 
-exports.runPortScanner = async (req, res) => {
+import portscanner from "portscanner";
+import PortScanResult from "../models/PortScanResult.js";
+
+export const runPortScanner = async (req, res) => {
   const { host } = req.body;
 
   if (!host) {
@@ -10,6 +12,7 @@ exports.runPortScanner = async (req, res) => {
 
   try {
     const openPorts = [];
+
     for (let port = 20; port <= 100; port++) {
       const status = await portscanner.checkPortStatus(port, host);
       if (status === "open") {
@@ -17,7 +20,7 @@ exports.runPortScanner = async (req, res) => {
       }
     }
 
-    const result = await PortScanResult.create({
+    const scanResult = await PortScanResult.create({
       host,
       openPorts,
       scannedAt: new Date(),
@@ -25,9 +28,10 @@ exports.runPortScanner = async (req, res) => {
 
     res.status(200).json({
       message: "Port Scan Successful",
-      result,
+      result: scanResult,
     });
   } catch (error) {
+    console.error("Port Scan Error:", error.message);
     res.status(500).json({
       error: "Failed to scan ports",
       details: error.message,
