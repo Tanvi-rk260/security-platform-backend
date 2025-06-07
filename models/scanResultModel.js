@@ -16,7 +16,10 @@ const scanResultSchema = new mongoose.Schema({
   openPorts: mongoose.Schema.Types.Mixed,
   vulnerabilities: [vulnerabilitySchema],
   vulnerabilityCount: Number,
-  riskLevel: String
+  riskLevel: String,
+
+  // New field for time taken (milliseconds)
+  timespan: { type: Number, default: 0 },
 });
 
 export default mongoose.models.ScanResult || mongoose.model('ScanResult', scanResultSchema);

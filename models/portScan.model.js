@@ -18,6 +18,9 @@ const scanResultSchema = new mongoose.Schema({
     riskAssessment: String,
   },
   recommendations: [String],
+
+  // New timespan field in milliseconds
+  timespan: { type: Number, default: 0 },
 });
 
 const PortScan = mongoose.model("PortScan", scanResultSchema);

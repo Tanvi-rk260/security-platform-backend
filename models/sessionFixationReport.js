@@ -10,6 +10,9 @@ const SessionFixationReportSchema = new mongoose.Schema({
     },
   ],
   createdAt: { type: Date, default: Date.now },
+
+  // New timespan field in milliseconds
+  timespan: { type: Number, default: 0 },
 });
 
 const SessionFixationReport = mongoose.model('SessionFixationReport', SessionFixationReportSchema);

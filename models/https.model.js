@@ -6,6 +6,9 @@ const httpsCheckSchema = new mongoose.Schema({
   hstsEnabled: Boolean,
   hstsMaxAge: Number,
   checkedAt: { type: Date, default: Date.now },
+
+  // New timespan field (in milliseconds)
+  timespan: { type: Number, default: 0 },
 });
 
 export default mongoose.model("HttpsCheck", httpsCheckSchema);

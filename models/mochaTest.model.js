@@ -9,7 +9,7 @@ const mochaTestSchema = new mongoose.Schema({
   passed: { type: Boolean },
   assertions: [{ message: String, passed: Boolean, error: String }],
   response: { type: Object },
-  duration: { type: Number },
+  timespan: { type: Number },  // renamed from duration
   testedAt: { type: Date, default: Date.now }
 });
 

@@ -5,6 +5,9 @@ const csrfReportSchema = new mongoose.Schema({
   vulnerable: { type: Boolean, required: true },
   issues: [String],
   createdAt: { type: Date, default: Date.now },
+
+  // New timespan field in milliseconds
+  timespan: { type: Number, default: 0 },
 });
 
 const CsrfReport = mongoose.model('CsrfReport', csrfReportSchema);

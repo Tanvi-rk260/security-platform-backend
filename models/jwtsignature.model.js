@@ -7,6 +7,9 @@ const jwtSignatureSchema = new mongoose.Schema({
   header: { type: Object, required: false },
   payload: { type: Object, required: false },
   validatedAt: { type: Date, default: Date.now },
+
+  // New timespan field in milliseconds
+  timespan: { type: Number, default: 0 },
 });
 
 const JWTSignature = mongoose.model('JWTSignature', jwtSignatureSchema);

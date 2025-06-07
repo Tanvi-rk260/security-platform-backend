@@ -9,6 +9,9 @@ const metaAnalyzeSchema = new mongoose.Schema({
     },
   ],
   createdAt: { type: Date, default: Date.now },
+
+  // New timespan field (in milliseconds)
+  timespan: { type: Number, default: 0 },
 });
 
 const MetaAnalyze = mongoose.model('MetaAnalyze', metaAnalyzeSchema);

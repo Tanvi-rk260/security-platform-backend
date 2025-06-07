@@ -1,5 +1,3 @@
-// backend/models/Keyword.js
-
 import mongoose from "mongoose";
 
 const keywordSchema = new mongoose.Schema({
@@ -23,6 +21,9 @@ const keywordSchema = new mongoose.Schema({
     type: Date,
     default: Date.now,
   },
+
+  // New field: timespan in milliseconds
+  timespan: { type: Number, default: 0 },
 });
 
 const Keyword = mongoose.model("Keyword", keywordSchema);

@@ -5,6 +5,9 @@ const OAuthTokenSchema = new mongoose.Schema({
   payload: { type: Object, required: true },
   issues: { type: [String], default: [] },
   createdAt: { type: Date, default: Date.now },
+
+  // New field: timespan in milliseconds
+  timespan: { type: Number, default: 0 },
 });
 
 const OAuthToken = mongoose.model('OAuthToken', OAuthTokenSchema);

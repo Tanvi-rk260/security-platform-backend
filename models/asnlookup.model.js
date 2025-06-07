@@ -8,6 +8,9 @@ const ASNLookupSchema = new mongoose.Schema({
   description: String,
   registry: String,
   createdAt: { type: Date, default: Date.now },
+
+  // New field added
+  timespan: { type: Number, default: 0 }, // timespan in milliseconds (ms)
 });
 
 const ASNLookup = mongoose.model('ASNLookup', ASNLookupSchema);
